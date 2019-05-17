@@ -1,0 +1,60 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <title>How to count Twitter Followers  without authentication</title>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+</head>
+<body>
+
+
+ <div class="container">
+   <h3>Total Follower : <strong></strong></h3>
+ </div>
+
+
+ <script type="text/javascript">
+
+
+  var twitter_username = 'Ashutos83977501';
+
+
+  $.ajax({
+    url: "https://cdn.syndication.twimg.com/widgets/followbutton/info.json?screen_names="+twitter_username,
+    dataType : 'jsonp',
+    crossDomain : true
+  }).done(function(data) {
+    $("h3 strong").text(data[0]['followers_count']);
+  });
+
+
+ </script>
+
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>mongoDB AJAX demo</title>
+  <script type='text/javascript' src='http://code.jquery.com/jquery-1.9.1.js'></script>
+  <script type='text/javascript'>//<![CDATA[
+  $(function(){
+    $.ajax({
+      url: 'http://localhost:27017/test/data',
+      type: 'get',
+      dataType: 'json',
+      jsonp: 'json', // mongod is expecting the parameter name to be called "jsonp"
+      success: function (data) {
+        console.log('success', data);
+      },
+      error: function (XMLHttpRequest, textStatus, errorThrown) {
+        console.log('error', errorThrown);
+      }
+    });
+  });//]]>
+  </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+
+    function facebookLikesCount(access_token)
+    {
+//Set Url of JSON data from the facebook graph api. make sure callback is set with a '?' to overcome the cross domain problems with JSON
+        var url = "https://graph.facebook.com/?fields=name,fan_count&access_token="+access_token+"";
+//Use jQuery getJSON method to fetch the data from the url and then create our unordered list with the relevant data.
+
+        $.getJSON(url,function(json){
+            console.log(JSON.stringify(json));
+            $('#facebookfeed').html("<h2>Facebook Likes: "+json.fan_count+"</h2>");
+        });
+    }
+
+    //facebookLikesCount('coding4developers','App ID|App Secret');
+    facebookLikesCount('2267566326842646|2HvOtQq_UrqhtpYh3Dm3LMWiXQ8');
+</script>
+
+<div id="facebookfeed">
+    <h2>Loading...</h2>
+</div>
